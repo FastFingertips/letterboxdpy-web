@@ -38,15 +38,13 @@ if username:
         st.write(f"Movies: {list_count}")
         st.write(f"URL: {list_url}")
 
-        columns = ["Rank", "Title", "LetterboxdURI"]
-
         st.dataframe(
             pd.DataFrame(
-                [(title, f'https://letterboxd.com/film/{slug}/') for title, slug in list_movies],
-                columns=[]
+                [(no, title, f'https://letterboxd.com/film/{slug}/') for no, (title, slug) in enumerate(list_movies, 1)],
+                columns=["Rank", "Title", "LetterboxdURI"]
                 ),
-                hide_index=True,
                 use_container_width=True,
+                hide_index=True
             )
     else:
         st.write("No lists found o_0")
