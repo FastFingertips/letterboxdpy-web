@@ -2,3 +2,4 @@ letterboxdpy @ git+https://github.com/fastfingertips/fork.letterboxdpy@main
 beautifulsoup4
 streamlit
 pandas
+lxml
